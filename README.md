@@ -72,19 +72,33 @@ Gunakan MVC pattern dalam menampilkan hasil dari masing-masing query ke dalam co
 Mari kita mulai dengan query-query sederhana.
 1. Command node app.js query-1
     Buatlah Query SQL untuk menampilkan menu, yang mempunyai kategori Drink dan di menu mulai bulan Mei 2021 - Juni 2021 dan data diurutkan berdasarkan tanggal.
+    
+    <img width="492" alt="Screen Shot 2022-08-04 at 17 45 18" src="https://user-images.githubusercontent.com/22075597/182829173-882e5f5c-a454-474a-9330-43cf011872fd.png">
 
 2. Command node app.js query-2
     Buatlah Query SQL untuk menampilkan menu yang mempunyai jumlah stok terbanyak di database.
+    
+    <img width="490" alt="Screen Shot 2022-08-04 at 17 45 22" src="https://user-images.githubusercontent.com/22075597/182829226-4c18dc62-cc09-4cfe-a582-36eac1c70b66.png">
 
+   
 3. Command node app.js query-3
     Buatlah Query SQL untuk menampilkan menu dimana nama barangnya mengandung kata “Burger”.
+    
+    <img width="485" alt="Screen Shot 2022-08-04 at 17 45 27" src="https://user-images.githubusercontent.com/22075597/182829245-57c0b48e-2591-479c-a269-8dcd98ccfd05.png">
 
 4. Command node app.js query-4
     Buatlah Query SQL untuk menampilkan menu dan kategorinya yang mempunyai stok terbanyak dari tanggal 2021-06-02 s/d 2021-07-09.
+    
+    <img width="487" alt="Screen Shot 2022-08-04 at 17 45 32" src="https://user-images.githubusercontent.com/22075597/182829270-0b6181e2-abf1-47d6-a8e6-ad9bee5993b9.png">
 
 5. Command node app.js query-5
     Buatlah Query SQL untuk menampilkan nama kategori yang mempunyai harga penjualan diatas 3000000 dan data diurutkan dari penjualan yang terbanyak.
     Harga penjualan adalah stok x harga.
+    
+    <img width="332" alt="Screen Shot 2022-08-04 at 17 45 39" src="https://user-images.githubusercontent.com/22075597/182829295-4706912d-36a0-4d35-8479-cad6235e94bc.png">
 
 NOTE
 Gunakanlah library cli-table (optional) / `console.table()` jika kamu ingin ber-eksperimen membuat hasil query kamu berada dalam tabel.
+
+<img width="392" alt="Screen Shot 2022-08-04 at 17 46 17" src="https://user-images.githubusercontent.com/22075597/182829342-241130dc-172a-40f1-9c9c-ae9b8cd9961f.png">
+
