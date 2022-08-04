@@ -1,0 +1,49 @@
+Part 1 Release 2
+-- RELEASE 2 --
+-- Number 1 - menu beserta kategorinya.
+SELECT menus.*, categories.category FROM menus
+INNER JOIN categories ON menus."IdCategory" = categories.id;
+-- BISA PAKE INI? SELECT * FROM menus, categories;
+
+
+-- Number 2 - menu dengan kategori Snack.
+SELECT menus.*, categories.category FROM menus
+INNER JOIN categories ON menus."IdCategory" = categories.id
+WHERE categories.category = 'Snack';
+-- BISA PAKE INI? SELECT * FROM menus WHERE "IdCategory" = 4;
+
+
+-- Number 3 - menu dengan stock terbanyak dari kategori Burger.
+SELECT max(stock) FROM menus
+INNER JOIN categories ON menus."IdCategory" = categories.id
+WHERE categories.category = 'Burger';
+-- BISA PAKE INI? SELECT * FROM menus WHERE "IdCategory" = 1 ORDER BY "stock" DESC LIMIT 1;
+
+
+-- Number 4 - menu beserta kategorinya dengan harga termahal.
+SELECT menus.* FROM menus
+INNER JOIN categories ON menus."IdCategory" = categories.id
+ORDER BY menus.price DESC
+LIMIT 1;
+-- BISA PAKE INI? SELECT * FROM menus i, categories ORDER BY i.price DESC LIMIT 1;
+
+
+-- Number 5 - harga rata-rata dari menu yang mempunyai kategori Ayam.
+SELECT avg(price) FROM menus
+INNER JOIN categories ON menus."IdCategory" = categories.id
+WHERE categories.category = 'Ayam';
+-- BISA PAKE INI? SELECT AVG("price") AS "average" FROM menus WHERE "IdCategory" = 2;
+
+
+-- Number 6 - jumlah stok dari menu yang mempunyai kategori Drink
+SELECT sum(stock) FROM menus
+INNER JOIN categories ON menus."IdCategory" = categories.id
+WHERE categories.category = 'Drink';
+-- BISA PAKE INI? SELECT SUM("stock") AS "stockDrink" FROM menus WHERE "IdCategory" = 3;
+
+
+-- Number 7 - jumlah stok dari menu yang ditambahkan di bulan agustus dari kategori Burger.
+SELECT sum(stock) FROM menus
+INNER JOIN categories ON menus."IdCategory" = categories.id
+WHERE date_part('month', menus."createdAt") = 8 AND categories.category = 'Burger';
+-- BISA PAKE INI? SELECT SUM(stock) FROM menus WHERE "IdCategory" = 1 AND date_part('month', "createdAt") = 8;

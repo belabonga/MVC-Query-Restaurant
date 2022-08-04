@@ -1,0 +1,74 @@
+Part 1 Release 1
+-- RELEASE 1
+
+-- Number 1 & 2
+CREATE TABLE IF NOT EXISTS "categories" (
+    "id" SERIAL PRIMARY KEY,
+    "category" VARCHAR
+);
+
+CREATE TABLE IF NOT EXISTS "menus" (
+    "id" SERIAL PRIMARY KEY,
+    "name" VARCHAR NOT NULL,
+    "IdCategory" INTEGER,
+    "stock" INTEGER,
+    "price" INTEGER,
+    "createdAt" DATE,
+    FOREIGN KEY("IdCategory")
+    REFERENCES "categories"(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+-- Number 3 & 4
+-- SELECT
+SELECT * FROM "menus";
+
+-- INSERT
+INSERT INTO "categories" ("category")
+VALUES ('Burger'),
+       ('Ayam'),
+       ('Drink'),
+       ('Snack'),
+       ('Paket Family');
+
+
+INSERT INTO "menus" ("name", "IdCategory", "stock", "price", "createdAt")
+VALUES ('Big Burger', 1, 55, 36000, '2021-03-03'),
+	('Cheeseburger Deluxe', 1, 45, 27500, '2021-08-03'),
+	('Cheeseburger', 1, 40, 28500, '2021-08-03'),
+	('Beef Burger', 1, 50, 23000, '2021-03-03'),
+	('Ayam Goreng', 2, 50, 19000, '2021-03-03'),
+	('Paket 2 Ayam', 2, 35, 36000, '2021-03-03'),
+	('Iced Lychee Tea', 3, 30, 29500, '2021-03-03'),
+	('Hot Coffee', 3, 20, 11000, '2021-06-03'),
+	('Coca-Cola', 3, 30, 13000, '2021-06-03'),
+	('Sweet Corn', 4, 20, 11000, '2021-03-03'),
+	('French Fries', 4, 45, 23000, '2021-03-03'),
+	('Apple Pie', 4, 30, 11000, '2021-03-03'),
+	('Family Bertiga Ayam', 5, 40, 53000, '2021-03-03'),
+	('Family Weekend Berempat Ayam', 5, 55, 144000, '2021-07-03'),
+	('Fish Filet Burger', 1, 25, 27500, '2021-07-03'),
+	('Spicy Burger', 1, 45, 36000, '2021-07-03'),
+	('Chicken Burder Deluxe', 1, 35, 23000, '2021-07-03'),
+	('Milo', 3, 25, 13000, '2021-03-03'),
+	('Fanta', 3, 25, 13000, '2021-03-03'),
+	('Nugget', 4, 40, 21000, '2021-03-03'),
+	('Chicken Bites', 4, 50, 21000, '2021-03-03'),
+	('Chicken Fingers', 4, 40, 11000, '2021-03-03'),
+	('Triple Burger With Cheese', 1, 50, 37000, '2021-03-03');
+
+-- UPDATE
+UPDATE "menus"
+SET "name" = 'Ayam Taliwang'
+WHERE "id" = 1;
+
+
+-- DELETE
+DELETE FROM "menus"
+WHERE "id" = 1;
+
+
+-- Number 5
+DROP TABLE IF EXISTS "menus";
+DROP TABLE IF EXISTS "categories";
