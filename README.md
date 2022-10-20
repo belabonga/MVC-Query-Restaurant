@@ -1,4 +1,4 @@
-# Hacktiv Restaurant DB
+# Restaurant DB
 ## Learning Competencies
 - Mampu memodelkan requirement ke dalam bentuk database schema ERD
 - Mampu membuat database, table, dan seeding dengan menggunakan node postgres
